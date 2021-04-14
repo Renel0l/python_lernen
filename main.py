@@ -5,7 +5,7 @@ print("Hey du bist super!")                 #In "" stehen Strings
 a = 2**85                                   # Mit ** rechnet man hoch 2^85
 print (a)                                   # Zahlen brauchen keine "" man nennt sie Integers oder Float
 
-v = "deine mutter stinkt nicht"
+v = "deine mutter stinkt nicht"lll
 print (v)
 
 #Verschiedene Dinge ausgeben wie Variablen mit verschiedenem Inhalt und Strings
