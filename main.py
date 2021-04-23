@@ -125,7 +125,7 @@ while x <=15:                                       #Solange x kleiner gleich 15
         print("X ist weder kleiner,gleich 5 noch kleiner als 10:",x)
     #x = x + 1                                       #x wird  ein neuer Wert hinzugefügt x += 1 entspricht x = x + 1
     x += 1                                           #TIPP: Die Stelle an den man die Bedingung aufrechnet ist wichtig
-print("fertig")
+print("fertig" + "\n")
 
 #Die Schleifen - For Schleifen - Machen fast das gleiche wie While, aber effizienter
                                                     #Ist sehr viel anders als in z.B. Java wo wir uns eine Zählvariable definieren und dadurch zählen                    
@@ -139,14 +139,15 @@ for x in range(15):                                 #Weist der Variablen x 15 ma
     else:
         print("X ist weder kleiner,gleich 5 noch kleiner als 10:",x)
     #es muss nicht hochgezählt werden
-print("finish")
+print("finish" + "\n" )
 
 #Listen durchgehen mit der For-Schleife
 x = ["Python", "Java", "C++"]   
 
 for w in x:                                      #Wir definieren ein Wort/Element "W", dieses liegt in der Liste x 
     print(w)                                     #Für jedes Element W in der Liste x
-print("finished Wort")
+print("finished Wort" + "\n")
+
 #Listen können also auch gemischt sein
 x = x + [3,2,1]                                  #Erweitere die Liste um ein paar Integers 
 for w in x:                                      #Wir definieren ein Wort/Element "W", dieses liegt in der Liste x 
@@ -162,7 +163,7 @@ for w in x:                                      #Wir definieren ein Wort/Elemen
 #Zur Erklärung: w = 1, y = 1, danach ist w = 1 weil man immer noch in der inneren Schleife ist, y = 2 - die innere Schleife endet, w wird zu 2, y = 1 weil die innere von vorne
 #beginnt, w = 2, y = 2 - ENDE   
 #Das Beispiel ist natürlich wenig nützlich aber es gibt Anwendungsfälle dafür, die if Schleife ist etwas praktikabler
-print("finished Schleife in Schleife")
+print("finished Schleife in Schleife" + "\n")
 
 #Die if Abfrage in der For Schleife - Wir fragen ab ob die Elemente in dem Array einer Bedingung entsprechen und führen je nachdem etwas aus
 x = [234,3,54,65,646,23,646,324,3,4,656,435,4,32,5345435]
@@ -171,4 +172,67 @@ for w in x:
         print("w ist kleiner gleich 400:",w)
     else:
         print("w ist größer als 400:",w)
-print("If Abfrage in for Schleife fertig")    
+print("If Abfrage in for Schleife fertig" + "\n")    
+
+#Die For Schleife mit der range-Funktion - For Schleifen die x-mal durchlaufen - wie in Java 
+for i in range(5):                                  #Zählt im Grunde die Stellen eines Arrays(Liste) hoch wie bei "for w in x" aber in x steht 0,1,2,3,4
+    print(i)
+print("Finished - Einfache For-Schleife mit 'bis' range(5)")
+for i in range(5,10):                               #Man kann auch festlegen das man die Stellen 5 bis 10 nutzt wie hier(gezählt wird 5,6,7,8,9)
+    print(i)                                        #Denn Übersetzt ist die 10 gleichbedeutend mit "solange die Stelle kleiner als 10 ist"
+print("finished - For Schleife mit 'von bis' range(x,x)")
+for i in range(5,20,2):                             #Hier gibt man die Schrittweite an mit der hochgegangen werden solll
+    print(i)                                        #Möglich sind natürlich auch negative Angaben in allen Stellen der Funktion
+print("Finished - For Schleife mit 'von bis und Step' range(x,x,x)" + "\n")
+
+#Beispiel für den praktischen Nutzen einer Range Funktion - Um z.B. alle Elemente aus einem Array auszugeben
+x = ["Rene", "Pinky", "Kotek"]                      #Definiert das Array und dessen Stellen
+for i in range(0,len(x),2):                             #Für das Element i in der Range von der Länge des x-Arrays (das Array x hat 3 Elemente)            
+    print(x[i])                                     #Er setzt in i also 0,1,2 ein und wir können mit print(x[i]) die jeweilige Stelle ausgeben(x an der Stelle i)
+print("Finished - For Schleife mit range und der len-Funktion" + "\n")
+
+#Break und Continue in der For- und While-Schleifen - Um die Schleife an einer bestimmten Vorraussetzung abbrechen
+print("----Break und Continue in der For- und While-Schleifen - Um die Schleife an einer bestimmten Vorraussetzung abbrechen---")
+#Break - Bricht die Schleife ganz ab
+print("--Break--")
+for i in range(0,20,2):
+    if i%2 == 0:                                    #"i%2 == 0" %=modulo -> Rest einer Rechnung- Hat eine Zahl durch 2 einen Rest von 0 ist die Zahl grade
+        print(f"{i} ist eine grade Zahl....breche ab")#mit f"" erstellen wir hier einen Funktions-String"
+        break                                       #Wenn i durch 2 einen Rest von 0 hat(grade ist) bricht die for-Schleife ab (was direkt passiert)
+    print(i)                                        #Wird in diesem Fall gar nicht mehr ausgeführt
+
+for i in range(5,20):
+    max = 13                                        
+    if i > max:                                     #Wenn i größer ist als der in "max" definierte integer-Wert
+        print(f"Oh, {i} ist Größer als {max}...breche ab!")
+        break
+    print(i)                                        #Dieser Code wird ausgeführt bis die if Bedingung darüber zum break führt
+#Continue - Bricht die Schleife nur für den aktuellen Durchlauf ab
+print("--Continue--")
+for i in range(0,20):
+    if i%2 == 1:                                    #Wenn die Zahl ungrade ist führt er die if Abfrage aus
+        print(f"{i} ist ungrade")
+        continue                                    #Und unterbricht mit der Continue Funktion den Rest der Schleife
+    print(f"{i} ist grade")                         #Wenn die If Abfrage False ist wird dieser Teil ausgegeben
+
+print("Finished - Break und Continue in einer Schleife" + "\n")
+
+#Funktionen - Man definiert eine Funktion um diese immer wieder aufzurufen mit unterschiedlichen Parametern
+print("---Funktionen---")
+def Funktion(von, bis, step):                       #Definiert eine Funktion namens Funktions mit den Parametern von, bis und step
+    for i in range(von,bis,step):                   #hier verwenden wir die Parameter um die range der for-Schleife zu bestimmen
+        print(i+1)
+
+Funktion(0,52,2)                                    #Um die Funktion abzurufen müssen wir diese nur noch in den Code schreiben und die Parameter übergeben
+print("Finished Funktionen mit Parametern" + "\n")
+
+#Funktionen - Rückgaben aus Funktionen(returns), Fibonati-Zahlen und Rekursionen(Unendlicher Vorgang der mit Hilfe von sich selbst definierbar ist)
+print("Eine Fibonati Zahl errechnet sich aus den beiden vorheringen Werten addiert 0,1,1,2,3,5,8")
+def fib(n):                                         #Definiert die Funktion fib mit dem Parameter n      
+    if n < 2:
+        return "kapier ich nicht "
+    else:    
+        return fib(n-1)+fib(n-2)                    #Return gibt einen Wert zurück der danach angegeben wird hier fib(n-1)+fib(n-2)
+                                                    #Hier muss beachtet werden das wir direkt wieder die Funktion abrufen
+var = fib(10)
+print(var)
